@@ -6,23 +6,17 @@ inoremap <S-Tab> <C-d>
 set number
 
 "remaps ESC key to jk
-:imap kj <Esc>
-:imap U <C-r>
+imap jj <Esc>
+
 "remaps ctr R to U
-
-" Auto close when only window left is NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" Automatically open NERDTree when launching vim
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+imap U <C-r>
 
 
-" Toggle Nerd Tree with Ctrl N
-map <C-n> :NERDTreeToggle<CR>
+"switch hjkl to hnei for the colemak layout
+nnoremap n j
+nnoremap e k
+nnoremap i l
 
-set scrolloff=8
-
-" Open nerd tree on launching vim with no file specified
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+nnoremap j n
+nnoremap k e
+nnoremap l i
