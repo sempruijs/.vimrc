@@ -20,3 +20,13 @@ nnoremap i l
 nnoremap j n
 nnoremap k e
 nnoremap l i
+
+" Do that for visual mode too
+vnoremap n j
+vnoremap e k
+vnoremap i l
+
+vnoremap j n
+vnoremap k e
+vnoremap l i
+
